@@ -1,0 +1,4 @@
+---
+# TODO: Figure out a good way of checking for upgrades
+- name: OSX | Install alfred
+  homebrew_cask: name=alfred state=present

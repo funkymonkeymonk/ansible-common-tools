@@ -1,0 +1,4 @@
+---
+# TODO: Figure out a good way of checking for slack upgrades
+- name: OSX | Install slack
+  homebrew_cask: name=slack state=present
