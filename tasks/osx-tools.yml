@@ -1,0 +1,17 @@
+---
+- name: OSX | Install homebrew applications
+  homebrew: name={{ item }} state=present
+  with_items:
+     - hub
+
+- name: OSX | Install homebrew cask applications
+  homebrew_cask: name={{ item }} state=present
+  with_items:
+     - alfred
+     - flycut
+     - google-chrome
+     - iterm2
+     - slack
+
+- name: Add hub dotfile
+  copy: src=hub.dotfile dest=~/.dotfiles/ mode=0644
