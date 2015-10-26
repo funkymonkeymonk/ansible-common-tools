@@ -12,6 +12,7 @@
      - google-chrome
      - iterm2
      - slack
+     - caffeine
 
 - name: Add hub dotfile
   copy: src=hub.dotfile dest=~/.dotfiles/ mode=0644
