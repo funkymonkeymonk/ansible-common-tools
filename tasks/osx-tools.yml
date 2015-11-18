@@ -15,6 +15,9 @@
      - iterm2
      - seil
      - slack
+     - ubersicht
+
+# TODO: Figure out how to manage ubersicht configuration
 
 - name: Add hub dotfile
   copy: src=hub.dotfile dest=~/.dotfiles/ mode=0644
