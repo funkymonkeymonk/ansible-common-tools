@@ -13,7 +13,7 @@
      - flux
      - google-chrome
      - iterm2
-     - karabiner
+     - seil
      - slack
 
 - name: Add hub dotfile
