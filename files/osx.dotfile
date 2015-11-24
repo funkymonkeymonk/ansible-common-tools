@@ -4,6 +4,12 @@ notify() {
   osascript -e "display notification \"${body//\"/\\\"}\" with title \"${title//\"/\\\"}\""
 }
 
+alert() {
+  body=${1-'Demo notification\nsyntax: notify "title" "body"'}
+  title=${2-'Terminal notification'}
+  osascript -e "display alert \"${body//\"/\\\"}\" with title \"${title//\"/\\\"}\""
+}
+
 iso2usb() {
   if [ -f "$1" ]; then
     iso_name=$1
