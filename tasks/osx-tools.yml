@@ -18,6 +18,9 @@
     - slack
     - ubersicht
 
+- name: Add archey configuration
+  copy: src=archey-logo dest=~/.config/ mode=0644
+
 # - name: OSX | install ubersicht plugins
 #   git: repo=https://github.com/funkymonkeymonk/ubersicht-plugins.git dest=~/Library/Application\ Support/Übersicht/widgets/
 
