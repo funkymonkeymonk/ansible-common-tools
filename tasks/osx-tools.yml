@@ -18,8 +18,8 @@
     - slack
     - ubersicht
 
-- name: OSX | install ubersicht plugins
-  git: repo=https://github.com/funkymonkeymonk/ubersicht-plugins.git dest=~/Library/Application\ Support/Übersicht/widgets/
+# - name: OSX | install ubersicht plugins
+#   git: repo=https://github.com/funkymonkeymonk/ubersicht-plugins.git dest=~/Library/Application\ Support/Übersicht/widgets/
 
 - name: Add hub dotfile
   copy: src=hub.dotfile dest=~/.dotfiles/ mode=0644
