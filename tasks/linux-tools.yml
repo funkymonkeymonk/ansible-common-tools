@@ -1,0 +1,15 @@
+- name: Arch | Install applications
+  pacman: name={{ item }} state=latest update_cache=yes
+  with_items:
+    # - flux
+    - google-chrome
+    - hub
+    # - slack
+    - terminator
+
+# - name: Add archey configuration
+#   copy: src=archey-logo dest=~/.config/ mode=0644
+
+# Set up a cross platform replacement for archey as I'm not a hue fan of it
+# - name: Add archey dotfile
+#   copy: src=archey.dotfile dest=~/.dotfiles/ mode=0644

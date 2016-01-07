@@ -1,4 +1,13 @@
 ---
+# - name: OSX | Install homebrew
+#   command: ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+- name: OSX | Tap homebrew cask
+  homebrew_tap: tap=caskroom/cask state=present
+
+- name: OSX | Install cask
+  homebrew: name='brew-cask' state=latest update_homebrew=yes
+
 - name: OSX | Install homebrew applications
   homebrew: name={{ item }} state=present
   with_items:
@@ -20,12 +29,6 @@
 
 - name: Add archey configuration
   copy: src=archey-logo dest=~/.config/ mode=0644
-
-# - name: OSX | install ubersicht plugins
-#   git: repo=https://github.com/funkymonkeymonk/ubersicht-plugins.git dest=~/Library/Application\ Support/Übersicht/widgets/
-
-- name: Add hub dotfile
-  copy: src=hub.dotfile dest=~/.dotfiles/ mode=0644
 
 - name: Add archey dotfile
   copy: src=archey.dotfile dest=~/.dotfiles/ mode=0644

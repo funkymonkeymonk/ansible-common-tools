@@ -1,10 +1,11 @@
 ---
-
-- include: dotfiles.yml
-- include: homebrew.yml
-  when: ansible_os_family == "Darwin"
 - include: osx-tools.yml
   when: ansible_os_family == "Darwin"
+
+- include: linux-tools.yml
+  when: ansible_os_family == "Archlinux" or ansible_os_family == "Manjaro Linux"
+
+- include: dotfiles.yml
 
 - name: Ensure everything in ~/.dotfiles/ is sourced in ~/.bash_profile
   lineinfile: dest=~/.bash_profile create=yes line='for file in ~/.dotfiles/*; do if [ -f "$file" ]; then . $file; fi; done'
